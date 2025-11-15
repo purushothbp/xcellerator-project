@@ -1,4 +1,4 @@
-import { headers as nextHeaders } from "next/headers";
+import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
 import LoginForm from "./components/login-form";
 import ThemeToggle from "./components/theme-toggle";
@@ -12,7 +12,7 @@ type PageProps = {
 };
 
 export default async function HomePage({ searchParams }: PageProps) {
-  const currentHeaders = await nextHeaders();
+  const currentHeaders = await headers();
   const sessionResponse = await auth.api.getSession({
     headers: currentHeaders,
   });
