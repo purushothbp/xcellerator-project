@@ -20,6 +20,20 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Authentication & Database Setup
+
+1. Update `.env` and provide the values for:
+   - `NEXT_BETTER_AUTH_SECRET` and `NEXT_BETTER_AUTH_URL`
+   - `NEXT_DATABASE_URL` (Neon Postgres connection string)
+   - `NEXT_GOOGLE_CLIENT_ID` and `NEXT_GOOGLE_CLIENT_SECRET`
+2. Push the Better Auth schema to Neon:
+
+   ```bash
+   npm run db:push
+   ```
+
+3. Start the dev server with `npm run dev` and test email/password plus Google sign-in at `/login`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
